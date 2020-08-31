@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="motor" class="com.autowire.annons.Motor">
+	</bean>
+
+	<bean id="microController1"
+		class="com.autowire.annons.MicroController">
+		<property name="manufacturer" value="Intel" />
+		<property name="model" value="i7" />
+		<qualifier value="myController"/>
+	</bean>
+	
+	<bean id="microController2"
+		class="com.autowire.annons.MicroController">
+		<property name="manufacturer" value="AMD" />
+		<property name="model" value="Quadra Core" />
+	</bean>
+
+	<bean id="circuit" class="com.autowire.annons.Circuit">
+		<property name="manufacturer" value="Intex" />
+		<property name="watt" value="3939" />
+	</bean>
+	
+	<!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" 
+		/> -->
+	<context:annotation-config />
+
+
+</beans>
+
+
+
+
+
+
+
+
+
